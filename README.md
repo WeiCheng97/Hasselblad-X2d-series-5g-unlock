@@ -1,8 +1,8 @@
-# X2D / X2D II WiFi 地区设置（开源本地版）
+# X2D / X2D II WiFi 地区设置
 
 中文 | **[English README](README_EN.md)**
 
-> **本工具完全免费开源，任何收费行为皆为倒卖。** 唯一开源地址：https://github.com/WeiCheng97/Hasselblad-X2d-series-5g-unlock
+> **本工具完全免费开源，任何收费行为皆为倒卖。**
 
 通过相机 WiFi 热点直连哈苏 X2D / X2D II 的工厂诊断通道，读取/修改相机的 **WiFi 地区**（wifiRegion），用于解除日版等地区的 **5GHz WiFi 限制**，并可随时恢复。
 
