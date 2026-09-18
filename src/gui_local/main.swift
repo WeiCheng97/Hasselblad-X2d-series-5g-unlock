@@ -1,4 +1,4 @@
-// X2D / X2D II WiFi 地区设置 —— 开源本地版（无任何服务器，帧信息全部本地构造）
+// X2D / 907 WiFi 地区设置 —— 开源本地版（无任何服务器，帧信息全部本地构造）
 // 通过相机 WiFi 热点（TCP 30303 → testd 产测通道）读/写 wifiRegion，并触发相机重启。
 // 编译：swiftc -O -target arm64-apple-macosx12 -o x2d-region-local main.swift
 import AppKit
@@ -144,7 +144,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, CLLocation
     func applicationDidFinishLaunching(_ notification: Notification) {
         let w = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 620, height: 440),
                          styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
-        w.title = L("X2D / X2D II WiFi 地区设置", "X2D / X2D II WiFi Region Tool"); w.center(); w.delegate = self; w.minSize = NSSize(width: 560, height: 420)
+        w.title = L("X2D / 907 WiFi 地区设置", "X2D / 907 WiFi Region Tool"); w.center(); w.delegate = self; w.minSize = NSSize(width: 560, height: 420)
         let cv = w.contentView!
 
         topStateLabel = NSTextField(labelWithString: L("相机：未连", "Camera: not connected"))
@@ -243,7 +243,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, CLLocation
 
     // 切换语言后重设所有静态文案（日志区历史不动）
     func relocalize() {
-        window?.title = L("X2D / X2D II WiFi 地区设置", "X2D / X2D II WiFi Region Tool")
+        window?.title = L("X2D / 907 WiFi 地区设置", "X2D / 907 WiFi Region Tool")
         for v in window?.contentView?.subviews ?? [] {
             guard let f = v as? NSTextField else { continue }
             if f === topStateLabel { applyStatus(camera: wifiConnected, ssid: nil); continue }

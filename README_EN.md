@@ -1,10 +1,10 @@
-# X2D / X2D II WiFi Region Tool (Open-Source, Fully Local)
+# X2D / 907 WiFi Region Tool (Open-Source, Fully Local)
 
 **[中文版 README](README.md)** | English
 
 > **This tool is free and open source — anyone charging for it is reselling.** Only official repo: https://github.com/WeiCheng97/Hasselblad-X2d-series-5g-unlock
 
-Read and change the **WiFi region** (wifiRegion) of Hasselblad X2D / X2D II cameras over the camera's own WiFi hotspot, using the camera's built-in factory diagnostic channel — to lift the **5GHz WiFi restriction** on Japanese-region cameras, and to restore the original region at any time.
+Read and change the **WiFi region** (wifiRegion) of Hasselblad X2D / X2D II / 907X & CFV 100C cameras over the camera's own WiFi hotspot, using the camera's built-in factory diagnostic channel — to lift the **5GHz WiFi restriction** on Japanese-region cameras, and to restore the original region at any time.
 
 - **Fully local**: no servers, no accounts, no activation codes, no telemetry.
 - **No flashing, no firmware changes**: it adjusts a single factory parameter via the camera's own diagnostic command, and you can change it back anytime.
@@ -18,11 +18,13 @@ Read and change the **WiFi region** (wifiRegion) of Hasselblad X2D / X2D II came
 
 ### Option 1: Windows / Mac GUI
 
+Download from the [**Releases page**](https://github.com/WeiCheng97/Hasselblad-X2d-series-5g-unlock/releases/latest) (binaries are not kept in the source repo):
+
 | File | Platform |
 |---|---|
-| `release/X2D_WiFi地区设置_win.exe` | Windows 10/11 x64, single-file executable |
-| `release/X2D_WiFi地区设置_mac.zip` | macOS 12+ (Intel / Apple Silicon) — unzip and run (allow it in Privacy & Security on first launch) |
-| `release/X2D_WiFi地区一键设置.command` | Minimal macOS alternative — double-click to run (uses the stock Perl, nothing to install) |
+| `X2D_WiFi地区设置_win.exe` | Windows 10/11 x64, single-file executable |
+| `X2D_WiFi地区设置_mac.zip` | macOS 12+ (Intel / Apple Silicon) — unzip and run (allow it in Privacy & Security on first launch) |
+| `X2D_WiFi地区一键设置.command` | Minimal macOS alternative — double-click to run (uses the stock Perl, nothing to install) |
 
 > ⚠️ **The Windows GUI has not been tested on a real machine** (auto-join uses a temporary `netsh` profile; behavior may vary across Windows versions and Wi-Fi drivers).
 > If the Windows version gives you trouble, use the **Python CLI** (Option 2 — cross-platform, zero dependencies), or join the camera hotspot manually in Windows Settings and then run the Python script.
@@ -60,7 +62,7 @@ python3 src/x2d_wifi_region.py --host 192.168.2.1 # specify camera IP
 
 ## How It Works (protocol fully documented)
 
-Channel (byte-identical on X2D v4.2.0 and X2D II v1.3.16.2, verified by firmware reverse engineering):
+Channel (byte-identical on X2D v4.2.0 and X2D II v1.3.16.2, verified by firmware reverse engineering; community-tested on CFV 100C v4.0.0):
 
 ```
 Computer ──TCP 30303 (raw frames, no framing, no auth)──> msg2dbus (NetIO)
@@ -93,13 +95,13 @@ The unlock target is **6 (CN)**.
 - **Windows GUI won't open / can't connect / crashes**: the Windows GUI is untested on real hardware (see the warning above). Use the Python script for the same result: `python3 src/x2d_wifi_region.py --set 6 --reboot`.
 - **No change after writing**: the region parameter is only re-read at a full camera boot — this tool triggers that reboot automatically; if interrupted, power-cycle the camera fully once.
 - **Will it brick my camera?**: No. It's the camera's native factory diagnostic command with legal parameter values, fully reversible. Worst case, reset WiFi in the camera menu or factory-reset.
-- **Supported models**: Hasselblad X2D 100C (firmware v4.2.0, tested), X2D II 100C (v1.3.16.2, tested). Other firmware versions should work identically but are untested.
+- **Supported models**: Hasselblad X2D 100C (firmware v4.2.0, tested), X2D II 100C (v1.3.16.2, tested), 907X & CFV 100C (v4.0.0, community-tested; hotspot name looks like `CFV 100C 008987`). Other firmware versions should work identically but are untested.
 
 ## Build
 
 - Windows GUI: `cd src/client_local && CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags "-H=windowsgui -s -w" -o X2D_WiFi地区设置.exe .`
 - Mac GUI: `cd src/gui_local && swiftc -O -target arm64-apple-macosx12 -o x2d-region-local main.swift` (package into a standard .app; use `-target x86_64-apple-macosx12` for Intel and `lipo` to make a universal binary)
-- The `.command` and the Python tool ship as source — nothing to build.
+- The `.command` (`src/X2D_WiFi地区一键设置.command`) and the Python tool ship as source — nothing to build.
 
 ## Disclaimer
 

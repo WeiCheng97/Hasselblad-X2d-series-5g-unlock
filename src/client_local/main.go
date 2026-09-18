@@ -1,4 +1,4 @@
-// X2D / X2D II WiFi 地区设置 —— 开源本地版（无任何服务器，帧信息全部本地构造）
+// X2D / 907 WiFi 地区设置 —— 开源本地版（无任何服务器，帧信息全部本地构造）
 // 通过相机 WiFi 热点（TCP 30303 → testd 产测通道）读/写 wifiRegion，并可触发相机重启。
 // 交叉编译：CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags -H=windowsgui
 package main
@@ -227,7 +227,7 @@ func (a *App) setRunning(b bool) {
 func main() {
 	go func() {
 		w := new(app.Window)
-		w.Option(app.Title("X2D / X2D II WiFi 地区设置（开源本地版）"), app.Size(unit.Dp(560), unit.Dp(560)))
+		w.Option(app.Title("X2D / 907 WiFi 地区设置"), app.Size(unit.Dp(560), unit.Dp(560)))
 		a := &App{w: w}
 		a.logList.Axis = layout.Vertical
 		a.ssidEdit.SingleLine = true
@@ -270,13 +270,13 @@ func (a *App) layout(gtx layout.Context, th *material.Theme) layout.Dimensions {
 	return layout.UniformInset(unit.Dp(16)).Layout(gtx, func(gtx layout.Context) layout.Dimensions {
 		return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-				return material.Label(th, unit.Sp(18), "X2D / X2D II WiFi 地区设置（本地版）").Layout(gtx)
+				return material.Label(th, unit.Sp(18), "X2D / 907 WiFi 地区设置").Layout(gtx)
 			}),
 			layout.Rigid(layout.Spacer{Height: unit.Dp(12)}.Layout),
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 				return layout.Flex{}.Layout(gtx,
 					layout.Flexed(1.2, func(gtx layout.Context) layout.Dimensions {
-						e := material.Editor(th, &a.ssidEdit, "热点名（如 X2D II 100C 012343）")
+						e := material.Editor(th, &a.ssidEdit, "热点名（如 X2D II 100C 012343 / CFV 100C 008987）")
 						return layout.UniformInset(unit.Dp(4)).Layout(gtx, e.Layout)
 					}),
 					layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
