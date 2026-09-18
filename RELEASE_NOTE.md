@@ -14,7 +14,7 @@
 
 ## 本版更新
 
-- ✅ **新增支持 Hasselblad 907X & CFV 100C**（社区实测固件 v4.0.0；热点名形如 `CFV 100C 008987`）。感谢 [@hugo00618](https://github.com/hugo00618) 实测并反馈
+- ✅ **新增支持 Hasselblad 907X & CFV 100C**（社区实测固件 v4.0.0；热点名形如 `CFV 100C xxxxxx`）。感谢 [@hugo00618](https://github.com/hugo00618) 实测并反馈
 - ✅ Mac 版热点自动识别兼容 `CFV …` 命名（此前版本扫描过滤已兼容，本版补齐全部界面文案与文档）
 - ✅ 界面标题、热点名示例、全部文档同步为三机型（X2D / X2D II / 907）
 - 📦 **成品改到 GitHub Releases 分发**，源码仓库不再内置二进制
@@ -24,8 +24,8 @@
 | 文件 | 平台 | SHA256 |
 |---|---|---|
 | `X2D_WiFi地区设置_mac.zip` | macOS 12+（Intel / Apple Silicon） | `b7ea2bb2c664b2f7fa26866ce81682b8d7776be10134e7ab30f11064505b5d3f` |
-| `X2D_WiFi地区设置_win.exe` | Windows 10/11 x64 | `2c27f099539342f8658d88033703630876938be8c9a2e1f12258625c9af61e62` |
-| `X2D_WiFi地区一键设置.command` | macOS（无需安装任何依赖） | `3cc880b40746a88fe98f0db5299a6a59bd35c86e73d0c5d2b07be8abf000f238` |
+| `X2D_WiFi地区设置_win.exe` | Windows 10/11 x64 | `cee2d70a2a631983acc504746b826be74e22e2c96d4776db2715a5d057c257c5` |
+| `X2D_WiFi地区一键设置.command` | macOS（无需安装任何依赖） | `db111d5d64bf59be36460c33b7d69447136ab25fbfc49d02296c0121f4be00c7` |
 
 ## 快速上手
 
@@ -65,7 +65,7 @@ WiFi region tool for Hasselblad X2D / X2D II / 907: lift the 5GHz restriction on
 
 ## What's New
 
-- ✅ **Added support for Hasselblad 907X & CFV 100C** (community-tested on firmware v4.0.0; hotspot name looks like `CFV 100C 008987`). Thanks to [@hugo00618](https://github.com/hugo00618) for testing and reporting
+- ✅ **Added support for Hasselblad 907X & CFV 100C** (community-tested on firmware v4.0.0; hotspot name looks like `CFV 100C xxxxxx`). Thanks to [@hugo00618](https://github.com/hugo00618) for testing and reporting
 - ✅ Mac hotspot auto-detection works with `CFV …` names (the scan filter already matched; this release updates all UI text and docs)
 - ✅ Titles, SSID examples and docs updated for all three models (X2D / X2D II / 907)
 - 📦 **Binaries now ship via GitHub Releases** instead of living in the source repo
@@ -75,8 +75,8 @@ WiFi region tool for Hasselblad X2D / X2D II / 907: lift the 5GHz restriction on
 | File | Platform | SHA256 |
 |---|---|---|
 | `X2D_WiFi地区设置_mac.zip` | macOS 12+ (Intel / Apple Silicon) | `b7ea2bb2c664b2f7fa26866ce81682b8d7776be10134e7ab30f11064505b5d3f` |
-| `X2D_WiFi地区设置_win.exe` | Windows 10/11 x64 | `2c27f099539342f8658d88033703630876938be8c9a2e1f12258625c9af61e62` |
-| `X2D_WiFi地区一键设置.command` | macOS (zero dependencies) | `3cc880b40746a88fe98f0db5299a6a59bd35c86e73d0c5d2b07be8abf000f238` |
+| `X2D_WiFi地区设置_win.exe` | Windows 10/11 x64 | `cee2d70a2a631983acc504746b826be74e22e2c96d4776db2715a5d057c257c5` |
+| `X2D_WiFi地区一键设置.command` | macOS (zero dependencies) | `db111d5d64bf59be36460c33b7d69447136ab25fbfc49d02296c0121f4be00c7` |
 
 ## Quick Start
 

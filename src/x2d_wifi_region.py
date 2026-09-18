@@ -22,7 +22,7 @@ x2d_wifi_region.py — 通过相机 WiFi 热点读/写哈苏 X2D / X2D II / 907X
   写入后必须【完全重启相机】才生效（WmsCtrl 只在开机时读一次 settings.ini）
 
 用法：
-  Mac 连接相机热点（如 X2D II 100C 012343 / CFV 100C 008987；热点休眠时先用手机 Phocus 蓝牙唤醒）
+  Mac 连接相机热点（如 X2D II 100C 012343 / CFV 100C xxxxxx；热点休眠时先用手机 Phocus 蓝牙唤醒）
   python3 x2d_wifi_region.py              # 只读当前地区（安全）
   python3 x2d_wifi_region.py --set 6      # 设为 CN（解锁 5G）
   python3 x2d_wifi_region.py --set 8      # 设为 JP（验证用：5G 会消失）
@@ -70,7 +70,7 @@ def transact(payload, timeout=6.0):
     except OSError as e:
         sys.exit(f"""[x] 连不上相机 {HOST}:{PORT}（{e.strerror or e}）
 排查清单：
-  1. Mac 是否已连接相机热点 WiFi？（系统设置 → Wi-Fi，如 X2D II 100C 012343 / CFV 100C 008987）
+  1. Mac 是否已连接相机热点 WiFi？（系统设置 → Wi-Fi，如 X2D II 100C 012343 / CFV 100C xxxxxx）
   2. 相机热点是否处于唤醒状态？——相机菜单里开启 WiFi；
      热点休眠时先用手机 Phocus 通过蓝牙唤醒
   3. 相机是否 ping 得通：ping -c 2 {HOST}

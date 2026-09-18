@@ -276,7 +276,7 @@ func (a *App) layout(gtx layout.Context, th *material.Theme) layout.Dimensions {
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 				return layout.Flex{}.Layout(gtx,
 					layout.Flexed(1.2, func(gtx layout.Context) layout.Dimensions {
-						e := material.Editor(th, &a.ssidEdit, "热点名（如 X2D II 100C 012343 / CFV 100C 008987）")
+						e := material.Editor(th, &a.ssidEdit, "热点名（如 X2D II 100C 012343 / CFV 100C xxxxxx）")
 						return layout.UniformInset(unit.Dp(4)).Layout(gtx, e.Layout)
 					}),
 					layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
