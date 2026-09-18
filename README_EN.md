@@ -93,7 +93,7 @@ The unlock target is **6 (CN)**.
 - **Windows GUI won't open / can't connect / crashes**: the Windows GUI is untested on real hardware (see the warning above). Use the Python script for the same result: `python3 src/x2d_wifi_region.py --set 6 --reboot`.
 - **No change after writing**: the region parameter is only re-read at a full camera boot — this tool triggers that reboot automatically; if interrupted, power-cycle the camera fully once.
 - **Will it brick my camera?**: No. It's the camera's native factory diagnostic command with legal parameter values, fully reversible. Worst case, reset WiFi in the camera menu or factory-reset.
-- **Supported models**: Hasselblad X2D 100C (firmware v4.2.0, tested), X2D II 100C (v1.3.16.2, tested). Other firmware versions should work identically but are untested.
+- **Supported models**: Hasselblad X2D 100C (firmware v4.2.0, tested), X2D II 100C (v1.3.16.2, tested), CFV 100C (v4.0.0). Other firmware versions should work identically but are untested.
 
 ## Build
 
