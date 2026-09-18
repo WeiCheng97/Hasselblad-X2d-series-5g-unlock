@@ -22,9 +22,9 @@
 
 | 文件 | 平台 |
 |---|---|
-| `X2D_WiFi地区设置_win.exe` | Windows 10/11 x64，单文件直接运行 |
-| `X2D_WiFi地区设置_mac.zip` | macOS 12+（Intel / Apple Silicon），解压双击运行（首次需在「隐私与安全性」允许） |
-| `X2D_WiFi地区一键设置.command` | macOS 双击运行的极简替代（系统自带 Perl，无需安装任何东西） |
+| `X2D_WiFi_Region_win.exe` | Windows 10/11 x64，单文件直接运行 |
+| `X2D_WiFi_Region_mac.zip` | macOS 12+（Intel / Apple Silicon），解压双击运行（首次需在「隐私与安全性」允许） |
+| `X2D_WiFi_Region_mac.command` | macOS 双击运行的极简替代（系统自带 Perl，无需安装任何东西） |
 
 > ⚠️ **Windows 版 GUI 目前未经真机测试**（自动连热点走 `netsh` 临时 profile，不同系统/网卡驱动行为可能有差异）。
 > 如果 Windows 版遇到问题，建议改用 **Python 命令行脚本**（方式二，跨平台、无第三方依赖）——或在 Windows 系统设置里手动连上相机热点后，再运行 Python 脚本即可。
@@ -99,9 +99,9 @@ sutest_cmd 252B:
 
 ## 构建
 
-- Windows GUI：`cd src/client_local && CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags "-H=windowsgui -s -w" -o X2D_WiFi地区设置.exe .`
+- Windows GUI：`cd src/client_local && CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags "-H=windowsgui -s -w" -o X2D_WiFi_Region_win.exe .`
 - Mac GUI：`cd src/gui_local && swiftc -O -target arm64-apple-macosx12 -o x2d-region-local main.swift`（再按常规 .app 结构打包；x86_64 换 `-target x86_64-apple-macosx12`，`lipo` 合并即通用包）
-- `.command`（`src/X2D_WiFi地区一键设置.command`）与 Python 工具为源码即产物，无需构建。
+- `.command`（`src/X2D_WiFi_Region_mac.command`）与 Python 工具为源码即产物，无需构建。
 
 ## 免责声明
 

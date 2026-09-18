@@ -22,9 +22,9 @@ Download from the [**Releases page**](https://github.com/WeiCheng97/Hasselblad-X
 
 | File | Platform |
 |---|---|
-| `X2D_WiFi地区设置_win.exe` | Windows 10/11 x64, single-file executable |
-| `X2D_WiFi地区设置_mac.zip` | macOS 12+ (Intel / Apple Silicon) — unzip and run (allow it in Privacy & Security on first launch) |
-| `X2D_WiFi地区一键设置.command` | Minimal macOS alternative — double-click to run (uses the stock Perl, nothing to install) |
+| `X2D_WiFi_Region_win.exe` | Windows 10/11 x64, single-file executable |
+| `X2D_WiFi_Region_mac.zip` | macOS 12+ (Intel / Apple Silicon) — unzip and run (allow it in Privacy & Security on first launch) |
+| `X2D_WiFi_Region_mac.command` | Minimal macOS alternative — double-click to run (uses the stock Perl, nothing to install) |
 
 > ⚠️ **The Windows GUI has not been tested on a real machine** (auto-join uses a temporary `netsh` profile; behavior may vary across Windows versions and Wi-Fi drivers).
 > If the Windows version gives you trouble, use the **Python CLI** (Option 2 — cross-platform, zero dependencies), or join the camera hotspot manually in Windows Settings and then run the Python script.
@@ -99,9 +99,9 @@ The unlock target is **6 (CN)**.
 
 ## Build
 
-- Windows GUI: `cd src/client_local && CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags "-H=windowsgui -s -w" -o X2D_WiFi地区设置.exe .`
+- Windows GUI: `cd src/client_local && CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags "-H=windowsgui -s -w" -o X2D_WiFi_Region_win.exe .`
 - Mac GUI: `cd src/gui_local && swiftc -O -target arm64-apple-macosx12 -o x2d-region-local main.swift` (package into a standard .app; use `-target x86_64-apple-macosx12` for Intel and `lipo` to make a universal binary)
-- The `.command` (`src/X2D_WiFi地区一键设置.command`) and the Python tool ship as source — nothing to build.
+- The `.command` (`src/X2D_WiFi_Region_mac.command`) and the Python tool ship as source — nothing to build.
 
 ## Disclaimer
 

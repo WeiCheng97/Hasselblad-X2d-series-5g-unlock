@@ -23,9 +23,9 @@
 
 | 文件 | 平台 | SHA256 |
 |---|---|---|
-| `X2D_WiFi地区设置_mac.zip` | macOS 12+（Intel / Apple Silicon） | `b7ea2bb2c664b2f7fa26866ce81682b8d7776be10134e7ab30f11064505b5d3f` |
-| `X2D_WiFi地区设置_win.exe` | Windows 10/11 x64 | `cee2d70a2a631983acc504746b826be74e22e2c96d4776db2715a5d057c257c5` |
-| `X2D_WiFi地区一键设置.command` | macOS（无需安装任何依赖） | `db111d5d64bf59be36460c33b7d69447136ab25fbfc49d02296c0121f4be00c7` |
+| `X2D_WiFi_Region_mac.zip` | macOS 12+（Intel / Apple Silicon） | `b7ea2bb2c664b2f7fa26866ce81682b8d7776be10134e7ab30f11064505b5d3f` |
+| `X2D_WiFi_Region_win.exe` | Windows 10/11 x64 | `cee2d70a2a631983acc504746b826be74e22e2c96d4776db2715a5d057c257c5` |
+| `X2D_WiFi_Region_mac.command` | macOS（无需安装任何依赖） | `db111d5d64bf59be36460c33b7d69447136ab25fbfc49d02296c0121f4be00c7` |
 
 ## 快速上手
 
@@ -74,9 +74,9 @@ WiFi region tool for Hasselblad X2D / X2D II / 907: lift the 5GHz restriction on
 
 | File | Platform | SHA256 |
 |---|---|---|
-| `X2D_WiFi地区设置_mac.zip` | macOS 12+ (Intel / Apple Silicon) | `b7ea2bb2c664b2f7fa26866ce81682b8d7776be10134e7ab30f11064505b5d3f` |
-| `X2D_WiFi地区设置_win.exe` | Windows 10/11 x64 | `cee2d70a2a631983acc504746b826be74e22e2c96d4776db2715a5d057c257c5` |
-| `X2D_WiFi地区一键设置.command` | macOS (zero dependencies) | `db111d5d64bf59be36460c33b7d69447136ab25fbfc49d02296c0121f4be00c7` |
+| `X2D_WiFi_Region_mac.zip` | macOS 12+ (Intel / Apple Silicon) | `b7ea2bb2c664b2f7fa26866ce81682b8d7776be10134e7ab30f11064505b5d3f` |
+| `X2D_WiFi_Region_win.exe` | Windows 10/11 x64 | `cee2d70a2a631983acc504746b826be74e22e2c96d4776db2715a5d057c257c5` |
+| `X2D_WiFi_Region_mac.command` | macOS (zero dependencies) | `db111d5d64bf59be36460c33b7d69447136ab25fbfc49d02296c0121f4be00c7` |
 
 ## Quick Start
 
