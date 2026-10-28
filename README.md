@@ -7,7 +7,7 @@
 通过相机 WiFi 热点直连哈苏 X2D / X2D II / 907X & CFV 100C 的工厂诊断通道，读取/修改相机的 **WiFi 地区**（wifiRegion），用于解除日版等地区的 **5GHz WiFi 限制**，并可随时恢复。
 
 - **完全本地运行**：不连任何服务器、无授权码、无遥测。
-- **不刷机、不改固件**：只通过相机自带的产测命令改一个参数，可随时改回。
+- **默认方式不刷机、不改固件**：只通过相机自带的产测命令改一个参数，可随时改回。需要预解锁固件或 ADB 时，另见[固件解锁模块](firmware/README.md)。
 - 支持：查询当前地区、设为 CN（解锁 5GHz）、设为 JP（恢复日版），写入后**自动触发相机有序重启**使新地区生效。
 
 ![主界面](docs/images/ui-main.png)
@@ -39,6 +39,8 @@
    - **设为 JP 恢复**（回滚）
 4. 写入后相机**自动重启**，新地区生效。
 
+> **X2D II 热点密码**：需要先用手机连接相机，再在手机的 WiFi 界面查看。如果找不到密码或操作不方便，可以选择[直接刷入的 CN / 5GHz 固件](firmware/README.md)。
+
 执行成功的样子（写入 → 回读一致 → 自动触发相机重启）：
 
 ![设为 CN 成功](docs/images/success-cn.png)
@@ -57,6 +59,21 @@ python3 src/x2d_wifi_region.py --set 8      # 设为 JP（恢复日版）
 python3 src/x2d_wifi_region.py --set 6 --reboot   # 写入并自动重启相机
 python3 src/x2d_wifi_region.py --host 192.168.2.1 # 指定相机 IP
 ```
+
+---
+
+## 可选：预解锁固件与 ADB（X2D / X2D II）
+
+> ⚠️ 默认推荐使用上面的免刷机方式。下面的修改固件仅适用于指定机型和基线版本，刷写前必须核对 SHA256，并承担刷机风险。
+
+从 [**v1.2.0 Release**](https://github.com/WeiCheng97/Hasselblad-X2d-series-5g-unlock/releases/tag/v1.2.0) 下载：
+
+| 机型 | 仅开启 ADB | 仅写入 CN / 解锁 5GHz |
+|---|---|---|
+| X2D 100C v4.2.0 | `X2D_100C_v4_2_0_adb.cim` | `X2D_100C_v4_2_0_regionCN_v2.cim` |
+| X2D II 100C v1.3.16.2 | `X2DII_100C_v1_3_16_2_adb.cim` | `X2DII_100C_v1_3_16_2_regionCN_v2.cim` |
+
+ADB 包不改 WiFi 地区；CN 包不含 ADB 修改。固件重打包原理、完整脚本、校验值、刷写与回退说明见 **[固件解锁模块](firmware/README.md)**。
 
 ---
 

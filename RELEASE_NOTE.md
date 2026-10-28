@@ -6,7 +6,46 @@
 
 ## 中文
 
-# v1.1.0 — 支持 907X & CFV 100C 🎉
+# v1.2.0 — X2D / X2D II 固件解锁模块 🎉
+
+新增可选的修改固件与完整重打包工具；原有免刷机地区设置工具继续保留，且三个成品 SHA256 不变。
+
+> **本工具完全免费开源，任何收费行为皆为倒卖。** 默认仍推荐免刷机方式；修改固件仅适用于指定机型和基线版本。
+
+## 本版更新
+
+- ✅ 新增 X2D 100C v4.2.0 与 X2D II 100C v1.3.16.2 的**纯 ADB 开启固件**，不改 WiFi 地区
+- ✅ 新增两代的 **CN / 5GHz 预写入固件**，不混入 ADB 修改
+- ✅ 公开 CIM 解包、ADB 重打包、地区重打包和独立校验脚本，以及中英文格式与刷写文档
+- ✅ 四个固件均通过全局 Checksum、全部条目 MD5、载荷隔离与脚本语法检查；X2D ADB 包已于 2026-10-28 真机确认可连接并获得 root shell
+- 📦 固件与桌面工具均通过 Release 分发，大型 `.cim` 文件不进入 Git 历史
+
+## 修改固件下载
+
+| 机型 | 用途 | 文件 | SHA256 |
+|---|---|---|---|
+| X2D 100C | 仅 ADB | `X2D_100C_v4_2_0_adb.cim` | `51ecadd29e93f304e4386bc86cc73bf89e55f4f545c0c09fac9d583e68007b07` |
+| X2D 100C | 仅 CN / 5GHz | `X2D_100C_v4_2_0_regionCN_v2.cim` | `6360ebf33685b2e02cd76815103bfe8948164c7592f93f7b5368cc5a10d69f45` |
+| X2D II 100C | 仅 ADB | `X2DII_100C_v1_3_16_2_adb.cim` | `f917578a71876ae54a234001bdefa378c6ee4daca32b72312b0c39f4e17696ec` |
+| X2D II 100C | 仅 CN / 5GHz | `X2DII_100C_v1_3_16_2_regionCN_v2.cim` | `30ca98ff0c7726e5f98274030366e4c9e0b2ae0b4ff5f18be076625f2655240f` |
+
+另附 `SHA256SUMS`。**X2D 与 X2D II 不可混刷；ADB 包不改地区，CN 包不开 ADB。** 刷写前备份数据并阅读[固件模块文档](firmware/README.md)。
+
+X2D II 热点密码需要先用手机连接相机，再在手机的 WiFi 界面查看；找不到或操作不方便时，可直接刷入本版的 CN / 5GHz 包。
+
+## 原免刷机工具下载（不变）
+
+| 文件 | 平台 | SHA256 |
+|---|---|---|
+| `X2D_WiFi_Region_mac.zip` | macOS 12+（Intel / Apple Silicon） | `b7ea2bb2c664b2f7fa26866ce81682b8d7776be10134e7ab30f11064505b5d3f` |
+| `X2D_WiFi_Region_win.exe` | Windows 10/11 x64 | `cee2d70a2a631983acc504746b826be74e22e2c96d4776db2715a5d057c257c5` |
+| `X2D_WiFi_Region_mac.command` | macOS（无需安装任何依赖） | `db111d5d64bf59be36460c33b7d69447136ab25fbfc49d02296c0121f4be00c7` |
+
+完整文档：[README.md](README.md) / [README_EN.md](README_EN.md) / [固件模块](firmware/README.md) / [Firmware module](firmware/README_EN.md)
+
+---
+
+# v1.1.0 — 支持 907X & CFV 100C（历史）
 
 哈苏 X2D / X2D II / 907 WiFi 地区设置工具：解除日版相机的 5GHz WiFi 限制，完全本地运行，不刷机、不改固件、随时可逆。
 
@@ -57,7 +96,46 @@
 
 ## English
 
-# v1.1.0 — 907X & CFV 100C Support 🎉
+# v1.2.0 — X2D / X2D II Firmware Unlock Module 🎉
+
+This release adds optional modified firmware and complete repacking tools. The original no-flash region tool remains available with unchanged SHA256 hashes.
+
+> **Free and open source — anyone charging for it is reselling.** The no-flash method remains recommended; modified firmware is only for the exact models and baseline versions listed below.
+
+## What's New
+
+- ✅ Added **ADB-only firmware** for X2D 100C v4.2.0 and X2D II 100C v1.3.16.2, with no WiFi-region change
+- ✅ Added **CN / 5GHz firmware** for both models, with no ADB payload
+- ✅ Published CIM extraction, ADB repacking, region repacking, and independent verification scripts plus bilingual format and flashing documentation
+- ✅ All four packages passed global-checksum, per-entry MD5, payload-isolation, and shell-syntax checks; X2D ADB and root shell were confirmed on hardware on 2026-10-28
+- 📦 Firmware and desktop tools ship through Releases; large `.cim` files stay out of Git history
+
+## Modified Firmware Downloads
+
+| Camera | Purpose | File | SHA256 |
+|---|---|---|---|
+| X2D 100C | ADB only | `X2D_100C_v4_2_0_adb.cim` | `51ecadd29e93f304e4386bc86cc73bf89e55f4f545c0c09fac9d583e68007b07` |
+| X2D 100C | CN / 5GHz only | `X2D_100C_v4_2_0_regionCN_v2.cim` | `6360ebf33685b2e02cd76815103bfe8948164c7592f93f7b5368cc5a10d69f45` |
+| X2D II 100C | ADB only | `X2DII_100C_v1_3_16_2_adb.cim` | `f917578a71876ae54a234001bdefa378c6ee4daca32b72312b0c39f4e17696ec` |
+| X2D II 100C | CN / 5GHz only | `X2DII_100C_v1_3_16_2_regionCN_v2.cim` | `30ca98ff0c7726e5f98274030366e4c9e0b2ae0b4ff5f18be076625f2655240f` |
+
+`SHA256SUMS` is attached as well. **Do not swap packages between X2D and X2D II. ADB packages do not change region; CN packages do not enable ADB.** Back up data and read the [firmware module documentation](firmware/README_EN.md) before flashing.
+
+For X2D II, connect a phone to the camera first and find the hotspot password in the phone's WiFi interface. If that is difficult or inconvenient, flash the CN / 5GHz package directly instead.
+
+## Original No-Flash Tools (Unchanged)
+
+| File | Platform | SHA256 |
+|---|---|---|
+| `X2D_WiFi_Region_mac.zip` | macOS 12+ (Intel / Apple Silicon) | `b7ea2bb2c664b2f7fa26866ce81682b8d7776be10134e7ab30f11064505b5d3f` |
+| `X2D_WiFi_Region_win.exe` | Windows 10/11 x64 | `cee2d70a2a631983acc504746b826be74e22e2c96d4776db2715a5d057c257c5` |
+| `X2D_WiFi_Region_mac.command` | macOS (zero dependencies) | `db111d5d64bf59be36460c33b7d69447136ab25fbfc49d02296c0121f4be00c7` |
+
+Docs: [README.md](README.md) (中文) / [README_EN.md](README_EN.md) (English) / [固件模块](firmware/README.md) / [Firmware module](firmware/README_EN.md)
+
+---
+
+# v1.1.0 — 907X & CFV 100C Support (History)
 
 WiFi region tool for Hasselblad X2D / X2D II / 907: lift the 5GHz restriction on Japanese-region cameras. Fully local, no flashing, no firmware changes, fully reversible.
 

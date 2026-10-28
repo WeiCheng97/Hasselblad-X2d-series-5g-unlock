@@ -7,7 +7,7 @@
 Read and change the **WiFi region** (wifiRegion) of Hasselblad X2D / X2D II / 907X & CFV 100C cameras over the camera's own WiFi hotspot, using the camera's built-in factory diagnostic channel — to lift the **5GHz WiFi restriction** on Japanese-region cameras, and to restore the original region at any time.
 
 - **Fully local**: no servers, no accounts, no activation codes, no telemetry.
-- **No flashing, no firmware changes**: it adjusts a single factory parameter via the camera's own diagnostic command, and you can change it back anytime.
+- **Default mode needs no flashing or firmware changes**: it adjusts a single factory parameter via the camera's own diagnostic command, and you can change it back anytime. For prebuilt firmware or ADB, see the optional [firmware module](firmware/README_EN.md).
 - Actions: query current region, set CN (unlock 5GHz), set JP (restore), and the camera is **automatically rebooted** after writing so the new region takes effect.
 
 ![Main UI](docs/images/ui-main.png)
@@ -39,6 +39,8 @@ Steps:
    - **Set JP (restore)** (rollback)
 4. The camera **reboots automatically** after writing; the new region takes effect.
 
+> **X2D II hotspot password**: connect a phone to the camera first, then look for the password in the phone's WiFi interface. If you cannot find it or this is inconvenient, use the [direct-flash CN / 5GHz firmware](firmware/README_EN.md) instead.
+
 What a successful run looks like (write → readback matches → camera reboot triggered):
 
 ![Set CN success](docs/images/success-cn.png)
@@ -57,6 +59,21 @@ python3 src/x2d_wifi_region.py --set 8      # set JP (restore)
 python3 src/x2d_wifi_region.py --set 6 --reboot   # write and auto-reboot the camera
 python3 src/x2d_wifi_region.py --host 192.168.2.1 # specify camera IP
 ```
+
+---
+
+## Optional: Prebuilt Firmware and ADB (X2D / X2D II)
+
+> ⚠️ The no-flash method above remains recommended. Modified firmware is only for the exact models and baseline versions listed below. Verify SHA256 before flashing and understand the firmware risks.
+
+Download from the [**v1.2.0 Release**](https://github.com/WeiCheng97/Hasselblad-X2d-series-5g-unlock/releases/tag/v1.2.0):
+
+| Camera | ADB only | CN / 5GHz only |
+|---|---|---|
+| X2D 100C v4.2.0 | `X2D_100C_v4_2_0_adb.cim` | `X2D_100C_v4_2_0_regionCN_v2.cim` |
+| X2D II 100C v1.3.16.2 | `X2DII_100C_v1_3_16_2_adb.cim` | `X2DII_100C_v1_3_16_2_regionCN_v2.cim` |
+
+ADB packages do not change WiFi region; CN packages do not enable ADB. See the **[firmware unlock module](firmware/README_EN.md)** for the repacking format, scripts, hashes, flashing instructions, and rollback details.
 
 ---
 

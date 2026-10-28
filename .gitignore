@@ -1,2 +1,5 @@
 x2d wifi解锁工具/
 .DS_Store
+.venv/
+__pycache__/
+*.cim
